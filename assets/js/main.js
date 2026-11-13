@@ -136,6 +136,21 @@
   }, { passive: true });
 
   /* ------------------------------------------------------------------------
+     Mobile CTA — keep the hero clean, reveal after it
+     ------------------------------------------------------------------------ */
+  const heroSection = $('.hero');
+  const mobileCta = $('.mobile-cta');
+
+  if (heroSection && mobileCta && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        mobileCta.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0.02 });
+    heroObserver.observe(heroSection);
+  }
+
+  /* ------------------------------------------------------------------------
      Scroll reveal
      ------------------------------------------------------------------------ */
   const revealItems = $$('.reveal');
