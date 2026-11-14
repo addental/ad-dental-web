@@ -1373,7 +1373,65 @@ em { font-style: italic; }
 .gallery-foot p { color: var(--muted); font-size: 12.5px; }
 
 /* --------------------------------------------------------------------------
-   13. FAQ
+   13. Social results
+   -------------------------------------------------------------------------- */
+.social-feed { background: var(--paper); color: var(--text); }
+.social-feed-grid {
+  display: grid;
+  grid-template-columns: 6fr 3fr 3fr;
+  align-items: start;
+  gap: 14px;
+}
+.social-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--text);
+  text-decoration: none;
+}
+.social-card-media {
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(23, 19, 14, .07);
+  background: var(--sand);
+}
+.social-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(.97);
+  transition: transform 1s var(--ease), filter .45s var(--ease);
+}
+.social-card:hover img { transform: scale(1.025); filter: saturate(1.04); }
+.social-card-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 0 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.social-card-label .icon { width: 13px; height: 13px; color: var(--gold-deep); transition: transform .3s var(--ease); }
+.social-card:hover .social-card-label .icon { transform: translate(2px, -2px); }
+.social-feed-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 23px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.social-feed-foot p { max-width: 620px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+
+/* --------------------------------------------------------------------------
+   14. FAQ
    -------------------------------------------------------------------------- */
 .faq { background: var(--sand); color: var(--text); }
 .faq-grid {
@@ -1446,7 +1504,7 @@ em { font-style: italic; }
 .faq-a p { color: var(--muted); font-size: 14px; line-height: 1.85; }
 
 /* --------------------------------------------------------------------------
-   14. Booking
+   15. Booking
    -------------------------------------------------------------------------- */
 .booking {
   position: relative;
@@ -1622,7 +1680,7 @@ em { font-style: italic; }
 .invite-handle:hover { color: var(--gold-deep); }
 
 /* --------------------------------------------------------------------------
-   15. Footer
+   16. Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   padding-top: clamp(58px, 7vw, 88px);
@@ -1711,7 +1769,7 @@ em { font-style: italic; }
 .footer-bottom a:hover { color: var(--gold); }
 
 /* --------------------------------------------------------------------------
-   16. Mobile sticky CTA
+   17. Mobile sticky CTA
    -------------------------------------------------------------------------- */
 .mobile-cta {
   position: fixed;
@@ -1746,7 +1804,7 @@ em { font-style: italic; }
 .mobile-cta-ig .icon { width: 18px; height: 18px; }
 
 /* --------------------------------------------------------------------------
-   17. Lightbox
+   18. Lightbox
    -------------------------------------------------------------------------- */
 .lightbox {
   position: fixed;
@@ -1818,7 +1876,7 @@ em { font-style: italic; }
 .lightbox-nav:hover { border-color: var(--gold); background: rgba(200, 162, 92, .1); color: var(--gold); }
 
 /* --------------------------------------------------------------------------
-   18. Motion
+   19. Motion
    -------------------------------------------------------------------------- */
 .js .hero-bg { animation: heroBg 1.5s .08s var(--ease) both; }
 .js .hero-eyebrow { animation: fadeUp .8s .25s var(--ease) both; }
@@ -1870,7 +1928,7 @@ em { font-style: italic; }
 }
 
 /* --------------------------------------------------------------------------
-   19. Responsive
+   20. Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 1180px) {
   .footer-grid { grid-template-columns: 1.5fr .7fr .8fr 1fr; gap: 30px; }
@@ -1935,6 +1993,9 @@ em { font-style: italic; }
   .booking-grid { grid-template-columns: 1fr; gap: 42px; }
   .booking-copy { max-width: 650px; }
   .instagram-invite { max-width: 640px; }
+
+  .social-feed-grid { grid-template-columns: 1fr 1fr; }
+  .social-card:first-child { grid-column: 1 / 3; }
 
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 250px 200px 200px; }
   .g1 { grid-column: 1 / 3; grid-row: 1; }
@@ -2085,6 +2146,10 @@ em { font-style: italic; }
 
   .approach-badge { left: 12px; bottom: 12px; padding: 12px 15px; }
   .approach-badge-mark { font-size: 26px; }
+
+  .social-feed-grid { grid-template-columns: 1fr; }
+  .social-card:first-child { grid-column: auto; }
+  .social-feed-foot { align-items: flex-start; flex-direction: column; gap: 12px; }
 
   .gallery-grid { grid-template-rows: 220px 160px 160px; }
   .gallery-caption { padding: 34px 12px 12px; font-size: 7.5px; }
